@@ -70,7 +70,6 @@ export const getSuggestedUsers = async (req, res) => {
   try {
     const userId = req.user._id;
     const { following } = await User.findById(userId).select("following");
-    console.log(following);
 
     const users = await User.aggregate([
       {
